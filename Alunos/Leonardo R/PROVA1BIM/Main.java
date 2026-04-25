@@ -127,7 +127,7 @@ public class Main {
 
                     imobiliaria.listarTodos();
 
-                    System.out.print("Índice do contrato: ");
+                    System.out.print("numero do contrato(0-9): ");
                     int index = sc.nextInt();
 
                     imobiliaria.encerrarContrato(index);
@@ -189,12 +189,17 @@ public class Main {
 
     public static void demonstracao(Imobiliaria imobiliaria) {
 
+        System.out.println("===== DEMONSTRAÇÃO =====");
+
+        // Inquilinos
         Inquilino i1 = new Inquilino("João", "11111111111", "99999-1111");
         Inquilino i2 = new Inquilino("Maria", "22222222222", "99999-2222");
 
+        // Imóveis
         Apartamento ap = new Apartamento("Rua A, 123", 1200, 3);
         Casa casa = new Casa("Rua B, 456", 1800, true);
 
+        // Contratos
         Contrato c1 = new Contrato(
                 ap,
                 i1,
@@ -207,11 +212,17 @@ public class Main {
                 LocalDate.of(2026, 6, 1),
                 LocalDate.of(2026, 12, 1));
 
+        // encerra apenas o primeiro
         c1.encerrarContrato();
 
         imobiliaria.adicionarContrato(c1);
         imobiliaria.adicionarContrato(c2);
 
+        // MOSTRA TODOS (inclui encerrado)
+        System.out.println("\nTODOS OS CONTRATOS:");
+        imobiliaria.listarTodos();
+
+        // MOSTRA APENAS ATIVOS
         System.out.println("\nCONTRATOS ATIVOS:");
         imobiliaria.listarContratosAtivos();
     }
