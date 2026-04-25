@@ -4,15 +4,17 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Calculadora {
-    static ArrayList<Double> quantidades = new ArrayList<>();
-    static ArrayList<Double> valores = new ArrayList<>();
-    static ArrayList<Double> descontos = new ArrayList<>();
-    static ArrayList<LocalDate> datas = new ArrayList<>();
-    static LocalDate dataAtual;
-    static DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+    public static Loja loja;
+    public static ArrayList<Double> quantidades = new ArrayList<>();
+    public static ArrayList<Double> valores = new ArrayList<>();
+    public static ArrayList<Double> descontos = new ArrayList<>();
+    public static ArrayList<LocalDate> datas = new ArrayList<>();
+    public static LocalDate dataAtual;
+    public static DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
     
     public static void main(String[] args)  {
          Scanner scanner = new Scanner(System.in);
+         loja = new Loja("My Plant", "My Plant LTDA", "555", "cascavel", "Centro", "Rua estados unidos");
             MostrarMenu(scanner);
     }
 
@@ -25,6 +27,7 @@ public class Calculadora {
             System.out.println("[3]- sair");
             System.out.println("[4]- registro de vendas");
             System.out.println("[5] - Pesquisar vendas por data");
+             System.out.println("[6] - Novas funcionalidades");
             System.out.println("escolher uma das opcao:");
 
             opcao = scanner.nextInt();
@@ -45,7 +48,10 @@ public class Calculadora {
                     break;
                 case 5:
                     pesquisarVendasPorData(scanner);
-                    break;                        
+                    break; 
+                case 6:
+                    mostrardadosLoja(scanner);
+                    break;                           
                 default:
                     System.out.println("opção invalida");
                     break;
@@ -127,5 +133,11 @@ public class Calculadora {
         }
     }
         
+    }
+
+    private static void mostrardadosLoja(Scanner scanner) {
+        loja.apresentarSe();
+        loja.contarClientes();
+        loja.contarVendedores();
     }
 }
