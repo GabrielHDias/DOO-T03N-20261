@@ -5,10 +5,10 @@ import java.util.List;
 
 public class Usuario {
 
-    private String nome; // nome do user
-    private List<Serie> favoritos; // lista favoritas
-    private List<Serie> assistidas; // lista assistidos
-    private List<Serie> queroAssistir;// lista querer assistir
+    private String nome;
+    private List<Serie> favoritos; 
+    private List<Serie> assistidas; 
+    private List<Serie> queroAssistir;
 
     public Usuario() {
         this.favoritos = new ArrayList<>();

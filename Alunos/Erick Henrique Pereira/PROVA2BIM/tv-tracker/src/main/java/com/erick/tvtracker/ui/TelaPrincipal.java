@@ -52,7 +52,7 @@ public class TelaPrincipal extends JFrame {
         cabecalho.setBackground(new Color(40, 40, 60));
         cabecalho.setBorder(BorderFactory.createEmptyBorder(30, 30, 30, 30));
 
-        JLabel lblTitulo = new JLabel("📺 TV Tracker", SwingConstants.CENTER);
+        JLabel lblTitulo = new JLabel("📺❤️ TV Tracker", SwingConstants.CENTER);
         lblTitulo.setFont(new Font("Arial", Font.BOLD, 28));
         lblTitulo.setForeground(new Color(220, 220, 255));
 
